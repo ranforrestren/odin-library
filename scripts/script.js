@@ -4,6 +4,7 @@ submitButton.addEventListener('click', (e) => { addBookToLibrary(); });
 
 // library array
 let myLibrary = [];
+let myLibraryHTML = [];
 
 // constructor for book objects
 function Book(author, title, pages, isRead) {
@@ -34,6 +35,10 @@ function updateLibrary() {
   // find HTML element to put newly created books into
   const library = document.querySelector('#library');
 
+  // clear current HTML content
+  library.replaceChildren();
+
+  // create and add new DOM element for each book
   for (const book of myLibrary) {
     // create HTML elements
     const newBook = document.createElement('div');
@@ -43,6 +48,7 @@ function updateLibrary() {
     const bookIsRead = document.createElement('div');
 
     // add values from book object to elements
+    newBook.classList.add('content');
     bookAuthor.textContent = book.author;
     bookTitle.textContent = book.title;
     bookPages.textContent = book.pages;
@@ -56,3 +62,4 @@ function updateLibrary() {
     newBook.appendChild(bookIsRead);
   }
 }
+
