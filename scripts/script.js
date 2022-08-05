@@ -7,11 +7,12 @@ let myLibrary = [];
 let myLibraryHTML = [];
 
 // constructor for book objects
-function Book(author, title, pages, isRead) {
+function Book(author, title, pages, isRead, indexNum) {
   this.author = author;
   this.title = title;
   this.pages = pages;
   this.isRead = isRead;
+  this.indexNum = myLibrary.length;
 }
 
 // create new book object and push to library array
@@ -47,6 +48,13 @@ function updateLibrary() {
     const bookPages = document.createElement('div');
     const bookIsRead = document.createElement('div');
 
+    // add Delete Button
+    const deleteButton = document.createElement('button')
+    deleteButton.setAttribute('indexNum', book.indexNum);
+    deleteButton.classList.add('delete');
+    deleteButton.addEventListener('click', (e) => { deleteBook(deleteButton.getAttribute('indexNum')); });
+    deleteButton.textContent = "Delete?";
+    
     // add labels for created elements
     const auth = document.createElement('div');
     const titl = document.createElement('div');
@@ -78,15 +86,24 @@ function updateLibrary() {
     newBook.appendChild(bookPages);
     newBook.appendChild(read);
     newBook.appendChild(bookIsRead);
+    newBook.appendChild(deleteButton);
   }
 }
 
+// Delete book function 
+function deleteBook(index) {
+  myLibrary.splice(index, 1);
+  myLibrary.forEach((book, index)=>{book.indexNum = index;})
+  console.log(myLibrary);
+  updateLibrary();
+};
+
 // Some dummy content
-const book1 = new Book('Gustave Flaubert', 'Madame Bovary', '329', 'Not Read');
+const book1 = new Book('Gustave Flaubert', 'Madame Bovary', '329', 'Not Read', 0);
 myLibrary.push(book1);
-const book2 = new Book('F. Scott Fitzgerald', 'The Great Gatsby', '180', 'Read');
+const book2 = new Book('F. Scott Fitzgerald', 'The Great Gatsby', '180', 'Read', 1);
 myLibrary.push(book2);
-const book3 = new Book('Chinua Achebe', 'Things Fall Apart', '209', 'Read');
+const book3 = new Book('Chinua Achebe', 'Things Fall Apart', '209', 'Read', 2);
 myLibrary.push(book3);
 updateLibrary();
 

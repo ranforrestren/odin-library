@@ -21,6 +21,9 @@ html {
 
 #addBook button {
   width: calc(100% - 40px);
+}
+
+button {
   border-radius: 5px;
 }
 
@@ -55,4 +58,10 @@ hr {
 .label {
   font-size: 1.1rem;
   font-weight: 600;
+}
+
+.delete {
+  grid-column: 1 / 3;
+  width: 200px;
+  justify-self: center;
 }
