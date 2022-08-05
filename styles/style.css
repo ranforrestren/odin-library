@@ -1,0 +1,58 @@
+html {
+  background-color: #eff6ff;
+}
+
+#addBook {
+  width: 360px;
+  display: grid;
+  grid-template: repeat(7, 1fr) / 400px;
+  padding: 20px;
+  gap: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: #1d4ed8;
+  color: white;
+}
+
+#addBook input {
+  border-radius: 5px;
+  background-color: #eff6ff;
+}
+
+#addBook button {
+  width: calc(100% - 40px);
+  border-radius: 5px;
+}
+
+hr {
+  width: 1230px;
+  margin-left: 0px;
+}
+
+#library {
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  gap: 10px;
+}
+
+.content {
+  width: 360px;
+  display: grid;
+  grid-template: repeat(4, 1fr) / 100px 1fr;
+  padding: 20px;
+  gap: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: #3b82f6;
+  color: white;
+}
+
+.shadow {
+  box-shadow: 0px 6px 4px -4px #a8a29e;
+  z-index: 1;
+}
+
+.label {
+  font-size: 1.1rem;
+  font-weight: 600;
+}

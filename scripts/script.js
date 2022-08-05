@@ -47,19 +47,46 @@ function updateLibrary() {
     const bookPages = document.createElement('div');
     const bookIsRead = document.createElement('div');
 
+    // add labels for created elements
+    const auth = document.createElement('div');
+    const titl = document.createElement('div');
+    const pges = document.createElement('div');
+    const read = document.createElement('div');
+    auth.classList.add('label')
+    titl.classList.add('label')
+    pges.classList.add('label')
+    read.classList.add('label')
+
     // add values from book object to elements
-    newBook.classList.add('content');
+    newBook.classList.add('content', 'shadow');
     bookAuthor.textContent = book.author;
     bookTitle.textContent = book.title;
     bookPages.textContent = book.pages;
     bookIsRead.textContent = book.isRead;
+    auth.textContent = "Author:";
+    titl.textContent = "Title:";
+    pges.textContent = "Page Count:";
+    read.textContent = "Read?";
 
     // add HTML elements to DOM
     library.appendChild(newBook);
+    newBook.appendChild(auth);
     newBook.appendChild(bookAuthor);
+    newBook.appendChild(titl);
     newBook.appendChild(bookTitle);
+    newBook.appendChild(pges);
     newBook.appendChild(bookPages);
+    newBook.appendChild(read);
     newBook.appendChild(bookIsRead);
   }
 }
+
+// Some dummy content
+const book1 = new Book('Gustave Flaubert', 'Madame Bovary', '329', 'Not Read');
+myLibrary.push(book1);
+const book2 = new Book('F. Scott Fitzgerald', 'The Great Gatsby', '180', 'Read');
+myLibrary.push(book2);
+const book3 = new Book('Chinua Achebe', 'Things Fall Apart', '209', 'Read');
+myLibrary.push(book3);
+updateLibrary();
 

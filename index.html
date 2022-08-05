@@ -7,10 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Library</title>
   <script src="./scripts/script.js" defer></script>
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
-  <div id="addBook">
+  <div id="addBook" class="shadow">
     <div>
       <label for="author">Author:</label>
       <input type="text" id="author" name="author">
@@ -25,18 +26,18 @@
     </div>
     <div>Read?</div>
     <div>
-      <input type="radio" id="isRead" name="isRead" value="true">
+      <input type="radio" id="isRead" name="isRead" value="Read">
       <label for="isRead" name="isRead">Read</label>
     </div>
     <div>
-      <input type="radio" id="isRead" name="isRead" value="false">
+      <input type="radio" id="isRead" name="isRead" value="Not Read">
       <label for="isRead" name="isRead">Not Read</label>
     </div>
     <button id="submitButton" type="button">Add Book</button>
   </div>
   <hr>
   <div id="library">
-    
+
   </div>
 </body>
 
